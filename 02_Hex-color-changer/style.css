@@ -1,60 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Prompt:wght@300;400&display=swap');
 
-body {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 400;
-}
+    body {
+      font-family: 'Dancing Script', cursive;
+      font-family: 'Prompt', sans-serif;
+      padding: 5%;
+    }
 
-.hex-container {
-  border: 1px solid black;
+    .hex-container {
+      border: 1px solid black;
+      text-align: center;
+      width: 95%;
+      height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  width: 95%;
-  height: 100vh;
+    }
 
-}
+    .hex-colors {
+      /* border: 1px solid black; */
 
-.hex-colors {
-  border: 1px solid black;
+      text-align: center;
+      margin-top: -60px;
+    }
 
-  text-align: center;
-  margin-top: -60px;
-}
+    .hex-colors h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      animation: colorchange 5s infinite alternate;
 
-.hex-colors h1 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  animation: colorchange 5s infinite alternate;
+    }
 
-}
+    .hex-colors h2 {
+      border: 1px solid black;
+      font-size: 2rem;
 
-.hex-colors h2 {
-  border: 1px solid black;
-  font-size: 2rem;
+    }
 
-}
+    @keyframes colorchange {
+      0% {
+        color: indigo;
+      }
 
-@keyframes colorchange {
-  0% {
-    color: indigo;
-  }
+      20% {
+        color: blue;
+      }
 
-  20% {
-    color: blue;
-  }
+      40% {
+        color: green;
+      }
 
-  40% {
-    color: green;
-  }
+      60% {
+        color: yellow;
+      }
 
-  60% {
-    color: yellow;
-  }
+      80% {
+        color: orange;
+      }
 
-  80% {
-    color: orange;
-  }
-
-  100% {
-    color: red;
-  }
-}
+      100% {
+        color: red;
+      }
+    }

@@ -5,70 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Hex Colors</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-    body {
-      font-family: 'Dancing Script', cursive;
-      font-weight: 400;
-    }
-
-    .hex-container {
-      border: 1px solid black;
-
-      width: 95%;
-      height: 100vh;
-
-    }
-
-    .hex-colors {
-      border: 1px solid black;
-
-      text-align: center;
-      margin-top: -60px;
-    }
-
-    .hex-colors h1 {
-      font-size: 2rem;
-      text-transform: uppercase;
-      animation: colorchange 5s infinite alternate;
-
-    }
-
-    .hex-colors h2 {
-      border: 1px solid black;
-      font-size: 2rem;
-
-    }
-
-    @keyframes colorchange {
-      0% {
-        color: indigo;
-      }
-
-      20% {
-        color: blue;
-      }
-
-      40% {
-        color: green;
-      }
-
-      60% {
-        color: yellow;
-      }
-
-      80% {
-        color: orange;
-      }
-
-      100% {
-        color: red;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -77,10 +15,10 @@
   <div class="hex-container">
     <div class="hex-colors">
       <h1 style="font-size: 2rem;"> Click button to display hex code of color</h1>
-      <h2>The Hex code of the body color is #<span id="hex-color-code">00000</span< /h2>
-
+      <h2>The Hex code of the body color is #<span id="hex-color-code">00000</span></h2>
+        <button type="button" class="btn btn-primary" onclick="changeColor()">Click Me</button>
     </div>
-    <button type="button" class="btn btn-primary" onclick="changeColor()">Click Me</button>
+
 
   </div>
 
