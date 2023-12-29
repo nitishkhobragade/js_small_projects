@@ -1,0 +1,48 @@
+
+
+body{
+    background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+.msg-container{
+    border: 1px solid black;
+
+    width: 95%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message{
+    border: 1px solid lightgray;
+    background: rgb(222, 219, 219);
+    border-radius: 5px;
+    width: 500px;
+    height: auto;
+    margin: auto;
+    padding: 0 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0, 0.51);    
+}
+
+.message input{
+    width: 90%;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+}
+
+@media(max-width: 480px){
+    .message input{
+        width: 82%
+    }
+}
