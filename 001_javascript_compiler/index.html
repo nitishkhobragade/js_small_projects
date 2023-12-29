@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Compiler</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #editor {
+      flex: 1;
+      border: 1px solid #ccc;
+    }
+
+    #output {
+      padding: 10px;
+      background-color: #f4f4f4;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    #output{
+      height: 100px;
+      width: 80%;
+      background-color: rgba(179, 174, 174, 0.682);
+      margin: auto;
+    }
+  </style>
+  <!-- Include Monaco Editor styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.23.0/min/vs/editor/editor.main.min.css" />
+</head>
+<body>
+  <div id="editor"></div>
+  <button onclick="runProgram()">Run Program</button>
+  <div id="output"></div>
+
+  <!-- Include Monaco Editor scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.23.0/min/vs/loader.min.js"></script>
+  <script>
+    // Initialize Monaco Editor
+    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.23.0/min/vs' }});
+    require(['vs/editor/editor.main'], function () {
+      // Create Monaco Editor instance
+      const editor = monaco.editor.create(document.getElementById('editor'), {
+        value: '// Your JavaScript code goes here...',
+        language: 'javascript',
+        theme: 'vs-dark', // Change the theme if needed
+        automaticLayout: true,
+      });
+
+      // Set the editor as a global variable for access in other functions
+      window.editor = editor;
+
+      // Run the program initially
+      runProgram();
+    });
+
+    function runProgram() {
+      const editor = window.editor;
+      const output = document.getElementById('output');
+
+      try {
+        // Get the code from the editor
+        const code = editor.getValue();
+
+        // Clear previous output
+        output.textContent = '';
+
+        // Create a script element
+        const scriptElement = document.createElement('script');
+
+        // Set the text content of the script element to the user's code
+        scriptElement.textContent = `
+          try {
+            // Simulating asynchronous code execution
+            setTimeout(function() {
+              const result = (${code})();
+              document.getElementById('output').textContent = result;
+            }, 0);
+          } catch (error) {
+            document.getElementById('output').textContent = 'Error: ' + error.message;
+          }
+        `;
+
+        // Append the script element to the document
+        document.body.appendChild(scriptElement);
+      } catch (error) {
+        // Display any errors in the output div
+        output.textContent = 'Error: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
