@@ -5,6 +5,13 @@ body{
     background-size: cover;
 }
 
+button{
+    padding: 2px;
+    border-radius: 10px;
+    margin: auto;
+    border: 2px solid black;
+}
+
 button:hover{
     background: rgba(0,0,0,0.5);
 }
@@ -13,7 +20,7 @@ button:hover{
     border: 1px solid black;
 
     width: 95%;
-    height: 100vh;
+    height: 80vh;
     margin: auto;
     display: flex;
     justify-content: center;
