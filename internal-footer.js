@@ -1,6 +1,6 @@
 
 document.getElementById('footer').innerHTML =
-`<div class="flex items-center justify-center" style="background-color: rgb(61, 66, 70);">
+`<div class="flex items-center justify-center" style="background-color: rgb(61, 66, 70); margin-top: 80px;">
 <div class="m-2 max-w-5xl items-center">
     <div class="flex flex-col items-center"> <img class="flex m-1" src="" />
         <div class="m-2"> <a href="https://in.linkedin.com/in/nitishkhobragade"

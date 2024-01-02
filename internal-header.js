@@ -1,9 +1,9 @@
 
 document.getElementById('header').innerHTML =
 `<div>
-<div class="flex justify-center ">
+<div class="flex justify-center "  style="margin-bottom: 120px; z-index: 99;">
     <nav class="self-center fixed top-0 w-full max-w-7xl " style="background-color: rgb(61, 66, 70);">
-        <div class="flex justify-between items-center text-white">
+        <div class="flex justify-between items-center text-white" style="z-index:999;">
             <h1 class="uppercase pl-5 py-4 text-lg font-sans font-bold"><a href="../index.html">Javascript Projects</a></h1>
             <ul class="hidden md:flex items-center text-[18px] font-semibold pl-32">
                 <li class="hover:underline underline-offset-4 decoration-2 decoration-white py-2 rounded-lg px-5"><a

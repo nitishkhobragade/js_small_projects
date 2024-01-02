@@ -9,34 +9,61 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
     <style>
         #workarea{
-            height: 80vh;
+            height: auto;
             box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
             margin-top: 4.5rem;
             padding: 3%;
+            padding: 50px;
         }
     </style>
 </head>
 <body>
-    <header id="header"></header>
+    <header id="header" style="z-index: 999;"></header>
     <section id="workarea">
     <!-- your content starts from here  -->
     <div class="container">
         <div class="image fade">
-           <img src="./img/img1.jpg" alt="nature image" width="100%" > 
-           <img src="./img/img2.jpg" alt="nature image" width="100%" > 
-           <img src="./img/img3.jpg" alt="nature image" width="100%" > 
-           <img src="./img/img4.jpg" alt="nature image" width="100%" > 
-           <img src="./img/img5.jpg" alt="nature image" width="100%" > 
-           <img src="./img/img6.jpg" alt="nature image" width="100%" > 
-           <img src="./img/img7.jpg" alt="nature image" width="100%" > 
-           <img src="./img/img8.jpg" alt="nature image" width="100%" > 
+            <img src="img/img1.jpg" width="100%">
         </div>
-        <i class="fa-solid fa-circle-chevron-left"></i>
-        <i class="fa-solid fa-circle-chevron-right"></i>
+        <div class="image fade">
+            <img src="img/img2.jpg" width="100%">
+        </div>
+        <div class="image fade">
+            <img src="img/img3.jpg" width="100%">
+        </div>
+        <div class="image fade">
+            <img src="img/img4.jpg" width="100%">
+        </div>
+        <div class="image fade">
+            <img src="img/img5.jpg" width="100%">
+        </div>
+        <div class="image fade">
+            <img src="img/img6.jpg" width="100%">
+        </div>
+        <div class="image fade">
+            <img src="img/img7.jpg" width="100%">
+        </div>
+        <div class="image fade">
+            <img src="img/img8.jpg" width="100%">
+        </div>
 
+        <a id="prev" onclick="show_slide(-1)">&#10094;</a>
+        <a id="next" onclick="show_slide(1)">&#10095;</a>
+        
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
 
     <!-- your content ends here  -->
