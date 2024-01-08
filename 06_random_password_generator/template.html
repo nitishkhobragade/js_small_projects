@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="icon" type="image/x-icon" href="../logo-n.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
+    <style>
+        #workarea{
+            height: 80vh;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            margin-top: 4.5rem;
+            padding: 3%;
+        }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <section id="workarea">
+    <!-- your content starts from here  -->
+
+    <div class="container">
+        <h1>Password Generator</h1>
+        
+        <div class="display-container">
+
+            <input readonly placeholder="Password" class="display" data-passwordDisplay >
+            
+            <button>
+                <span data-copyMsg></span>
+                <img src="./img/copy-icon2.svg" alt="copy" width="40px">
+            </button>
+
+        </div>
+
+        <div class="input-container">
+
+            <!-- Password length section  -->
+            <div class="length-container">
+                <p>Password Length</p>
+                <p data-lengthNumber>0</p>
+            </div>
+
+            <!-- slider  -->
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+
+            <!-- checkboxes  -->
+            <div>
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase"> Include UpperCase Letters</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="lowercase">
+                <label for="lowercase"> Include LowerCase Letters</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="numbers">
+                <label for="numbers"> Include Numbers</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="symbols">
+                <label for="symbols"> Include Symbols</label>
+            </div>
+
+            <!-- strength section  -->
+            <div class="strength-container">
+                <p>Strength</p>
+                <div data-indicator></div>
+            </div>
+
+            <!-- generate password  -->
+            <button>Generate Password</button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- your content ends here  -->
+    </section>
+    <footer id="footer"></footer>
+    
+    <script src="../internal-header.js"></script>
+    <script src="../internal-footer.js"></script>
+    <script src="https://use.fontawesome.com/03f8a0ebd4.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+        extend: {
+            colors: {
+            clifford: '#da373d',
+            }
+        }
+        }
+    }
+    </script>
+    <script src="../tailwind.config.js"></script>
+</body>
+</html>
