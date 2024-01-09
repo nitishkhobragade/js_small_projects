@@ -22,10 +22,9 @@ document.getElementById('footer').innerHTML =
             <p class="hover:text-blue-600 text-gray-500 font-medium m-2"> <a href="#">Contact Us </a> </p>
             <p class="hover:text-blue-600 text-gray-500 font-medium m-2"> <a href="#"> Privacy Policy </a> </p>
         </div>
-        <div class="text-gray-500 font-medium mt-4 text-xs"> Copyright 2023. Made by <a href="#"
+        <div class="text-gray-500 font-medium mt-4 text-xs"> Copyright 2023. Made by <a href="https://in.linkedin.com/in/nitishkhobragade"
                 class="text-blue-600">Nitish Khobragade</a> </div>
     </div>
 </div>
 </div>
-<script src="https://use.fontawesome.com/03f8a0ebd4.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>`
+`
