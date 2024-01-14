@@ -1,9 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* styling  main container  */
+.center-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    /* border: 2px solid red; */
+    width: 300px;
+}
+
+/* style display password container  */
+.display-container{
+    display: flex;
+    gap: 10px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+
+
+/* style copy container  */
+.copy{
+    position: relative;
+    /* z-index: -1; */
+}
+
+.copy-img{
+    margin-top: -5px;
+    /* border: 2px solid red; */
+}
+
+.abc{
+    position: absolute;
+    right: -20px;
+    top: -23px;
+}
+
+span .msg-hide{
+    display: none;
+    z-index: -98;
+}
+
+span{
+    display: none;
+    z-index: -99;
+}
+
+.active{
+    display: block;
+    z-index: 11;
+}
+
+/* styling btn  */
 
 button{
     border: 1px solid black;
     border-radius: 10px;
     background-color: rgb(200, 196, 196);
+    padding: 5px;
 }
 /* .container{
 
 } */
+
+/* .active::before{
+    display: none;
+}
+
+.active::after{
+    display: block;
+} */
+
+/* strength indicator  */
+.strength-container{
+    display: flex;
+    gap: 130px;
+    margin: 10px;
+}
+
+.strength-indicator{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgba(110, 114, 118, 0.645);
+    box-shadow: 0 0 10px;
+    /* border: 2px solid red; */
+}
+
+/* other styling  */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.display-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.display {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.copy {
+
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.copy-img {
+    margin-left: 5px;
+}
+
+.msg-hide {
+    display: none;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+.length-container p {
+    margin: 0;
+    color: #333;
+}
+
+.slider {
+    width: 100%;
+    margin-top: 5px;
+}
+
+input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+label {
+    color: #333;
+    margin-left: 5px;
+}
+
+.strength-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.generateBtn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* other styling  */

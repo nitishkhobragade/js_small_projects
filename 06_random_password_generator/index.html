@@ -11,8 +11,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
     <style>
-        #workarea{
-            /* height: 80vh; */
+         #workarea{
             box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
             margin-top: 4.5rem;
             padding: 3%;
@@ -24,64 +23,67 @@
     <section id="workarea">
     <!-- your content starts from here  -->
 
-    <div class="container">
-        <h1>Password Generator</h1>
-        
-        <div class="display-container">
 
-            <input id="display-password" readonly placeholder="Password" class="display" data-passwordDisplay >
+    <div class="center-div">
+        <div class="container">
+            <h1>Password Generator</h1>
             
-            <button data-copy>
-                <span data-copyMsg></span>
-                <img src="./img/copy-icon2.svg" alt="copy" width="40px">
-            </button>
-
+            <div class="display-container">
+    
+                <input id="display-password" readonly placeholder="Password" class="display" data-passwordDisplay >
+                
+                <button class="copy" data-copy>
+                    <span class="abc msg-hide" data-copyMsg></span>
+                    <img src="./img/copy-icon2.svg" alt="copy" width="29px" class="copy-img" />
+                </button>
+    
+            </div>
+    
+            <div class="input-container">
+    
+                <!-- Password length section  -->
+                <div class="length-container">
+                    <p>Password Length</p>
+                    <p data-lengthNumber>0</p>
+                </div>
+    
+                <!-- slider  -->
+                <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
+    
+                <!-- checkboxes  -->
+                <div>
+                    <input type="checkbox" id="uppercase">
+                    <label for="uppercase"> Include UpperCase Letters</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" id="lowercase">
+                    <label for="lowercase"> Include LowerCase Letters</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" id="numbers">
+                    <label for="numbers"> Include Numbers</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" id="symbols">
+                    <label for="symbols"> Include Symbols</label>
+                </div>
+    
+                <!-- strength section  -->
+                <div class="strength-container">
+                    <p>Strength</p>
+                    <div class="strength-indicator" data-indicator></div>
+                </div>
+    
+                <!-- generate password  -->
+                <button class="generateBtn">Generate Password</button>
+    
+            </div>
+    
+    
         </div>
-
-        <div class="input-container">
-
-            <!-- Password length section  -->
-            <div class="length-container">
-                <p>Password Length</p>
-                <p data-lengthNumber>0</p>
-            </div>
-
-            <!-- slider  -->
-            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider>
-
-            <!-- checkboxes  -->
-            <div>
-                <input type="checkbox" id="uppercase">
-                <label for="uppercase"> Include UpperCase Letters</label>
-            </div>
-
-            <div>
-                <input type="checkbox" id="lowercase">
-                <label for="lowercase"> Include LowerCase Letters</label>
-            </div>
-
-            <div>
-                <input type="checkbox" id="numbers">
-                <label for="numbers"> Include Numbers</label>
-            </div>
-
-            <div>
-                <input type="checkbox" id="symbols">
-                <label for="symbols"> Include Symbols</label>
-            </div>
-
-            <!-- strength section  -->
-            <div class="strength-container">
-                <p>Strength</p>
-                <div data-indicator></div>
-            </div>
-
-            <!-- generate password  -->
-            <button class="generateBtn">Generate Password</button>
-
-        </div>
-
-
     </div>
 
 

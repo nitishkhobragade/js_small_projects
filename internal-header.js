@@ -1,7 +1,7 @@
 
 document.getElementById('header').innerHTML =
 `<div>
-<div class="flex justify-center "  style="margin-bottom: 120px; z-index: 99;">
+<div class="flex justify-center "  style=" z-index: 99;">
     <nav class="self-center fixed top-0 w-full max-w-7xl " style="background-color: rgb(61, 66, 70);">
         <div class="flex justify-between items-center text-white" style="z-index:999;">
             <h1 class="uppercase pl-5 py-4 text-lg font-sans font-bold"><a href="../index.html">Javascript Projects</a></h1>
