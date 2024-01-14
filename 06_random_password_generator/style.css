@@ -17,6 +17,79 @@ body {
     height: 80vh;
 }
 
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.display-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.display {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.copy {
+
+    background-color: #3498db;
+    border: none;
+
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.copy-img {
+    margin-left: 5px;
+}
+
+
+
+.input-container {
+    margin-top: 20px;
+}
+
+
+
+.slider {
+    width: 80%;
+    margin-top: 5px;
+}
+
+input[type="checkbox"] {
+    margin-top: 5px;
+}
+
+label {
+    color: #333;
+    margin-left: 5px;
+}
+
+
+
+.generateBtn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* other styling  */
 
 /* styling  main container  */
 .center-div{
