@@ -15,7 +15,7 @@
 
 .container{
     /* border: 2px solid red; */
-    width: 300px;
+    width: 300px !important;
 }
 
 /* style display password container  */
@@ -157,10 +157,7 @@ h1 {
     margin-top: 20px;
 }
 
-.length-container p {
-    margin: 0;
-    color: #333;
-}
+
 
 .slider {
     width: 100%;
@@ -176,10 +173,6 @@ label {
     margin-left: 5px;
 }
 
-.strength-container {
-    margin-top: 20px;
-    text-align: center;
-}
 
 
 .generateBtn {
