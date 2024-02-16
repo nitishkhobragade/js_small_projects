@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #548687;
+}
+
+.container{
+    height: 70vh;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
