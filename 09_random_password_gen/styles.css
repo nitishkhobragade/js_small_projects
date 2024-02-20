@@ -3,7 +3,7 @@
     --white: #fff;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -16,50 +16,49 @@ body {
 }
 
 .container {
-    border: 2px solid red;
-    margin: 12%;
+    margin: 2rem;
     width: 90%;
-    max-width: 700px;
+    max-width: 45rem; /* 700px converted to REM */
 }
 
 .display {
     width: 100%;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-top: 3rem; /* 50px converted to REM */
+    margin-bottom: 1.5rem; /* 30px converted to REM */
     background: #fff;
     color: #333;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 26px 20px;
-    border-radius: 5px;
+    padding: 1.625rem 1.25rem; /* 26px 20px converted to REM */
+    border-radius: 0.3125rem; /* 5px converted to REM */
 }
 
 .container h1 {
     font-weight: 500;
-    font-size: 45px;
+    font-size: 2.8125rem; /* 45px converted to REM */
 }
 
 .container h1 span {
     color: var(--theme1);
-    border-bottom: 4px solid var(--theme1);
-    padding-bottom: 7px;
+    border-bottom: 0.25rem solid var(--theme1);
+    padding-bottom: 0.4375rem; /* 7px converted to REM */
 }
 
 .display img {
-    width: 30px;
+    width: 1.875rem; /* 30px converted to REM */
     cursor: pointer; 
 }
 
 .display input {
     border: 0;
     outline: 0;
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px converted to REM */
 }
 
 .container button img {
-    width: 28px;
-    margin-right: 10px;
+    width: 1.75rem; /* 28px converted to REM */
+    margin-right: 0.625rem; /* 10px converted to REM */
 }
 
 .container button {
@@ -67,24 +66,106 @@ body {
     outline: 0;
     background: var(--theme1);
     color: #fff;
-    font-size: 22px;
+    font-size: 1.375rem; /* 22px converted to REM */
     font-weight: 300;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 0.3125rem; /* 5px converted to REM */
     cursor: pointer;
+    padding: 0.5rem;
 }
 
 .copy-message {
     display: none;
     position: fixed;
-    top: 10px;
+    top: 1rem; /* 10px converted to REM */
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; /* 10px 20px converted to REM */
     background-color: #4CAF50;
     color: white;
-    border-radius: 5px;
+    border-radius: 0.3125rem; /* 5px converted to REM */
     z-index: 999;
+}
+
+/* Media query for screens below 420px */
+@media (max-width: 420px) {
+    .container {
+        margin: 1rem;
+    }
+
+    .display {
+        margin-top: 2rem; /* Adjust margin top */
+        margin-bottom: 1rem; /* Adjust margin bottom */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .container h1 {
+        font-size: 2rem; /* Adjust font size */
+    }
+
+    .display input {
+        font-size: 1.25rem; /* Adjust font size */
+        width: 70%;
+    }
+
+    .container button {
+        font-size: 1.05rem; /* Adjust font size */
+        padding: 0.5rem 0.3rem;
+    }
+
+    .copy-message {
+        padding: 0.5rem 1rem; /* Adjust padding */
+        font-size: 0.875rem; /* Adjust font size */
+    }
+}
+
+/* for password length  */
+.container {
+    margin: 2rem;
+    width: 80%;
+    max-width: 600px;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 1.5rem;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #019f55, #fbd208); /* Gradient color */
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 2rem;
+    height: 2rem;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#lengthValue {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    color: #fff8f8;
+    margin: 0.5rem;
 }

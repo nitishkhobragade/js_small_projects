@@ -1,5 +1,8 @@
 const passwordBox = document.getElementById("password");
-const length = 12;
+let length = 6; // Initialize length variable with default value
+
+const passwordLengthSlider = document.getElementById('passwordLength');
+const lengthValue = document.getElementById('lengthValue');
 
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -7,6 +10,13 @@ const number = "0123456789";
 const symbol = "@#$^&*()_+~}{[]<>?-=";
 
 const allChars = upperCase + lowerCase + number + symbol;
+
+///for password length
+// Event listener for password length slider
+passwordLengthSlider.addEventListener('input', function() {
+    length = parseInt(this.value); // Update length variable
+    lengthValue.textContent = length; // Update displayed value
+});
 
 ////for creating password
 function createPassword() {
@@ -49,3 +59,4 @@ function showCopyMessage() {
         copyMessage.style.display = "none";
     }, 3000);
 }
+

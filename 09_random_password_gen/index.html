@@ -15,7 +15,14 @@
         </div>
         <div id="copyMessage" class="copy-message">Password copied</div>
 
+        <div class="passlength-container">
+            <label for="passwordLength">Password Length:</label>
+            <input type="range" id="passwordLength" min="4" max="12" step="1" value="6">
+            <span id="lengthValue">6</span>
+        </div>
+
         <button onclick="createPassword()"><img src="./images/generate.png" alt="flash icon">Generate Password</button>
+
     </div>
     <script src="./app.js"></script>
 </body>
