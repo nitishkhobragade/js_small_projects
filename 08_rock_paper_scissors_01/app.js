@@ -7,10 +7,10 @@ const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 
 
-//for generating computer choices
+////for generating computer choices
 const genCompChoice = () => {
     const options = ["rock", "paper", "scissors"];
-    //rock paper scissors
+    ////rock paper scissors
     const randIdx = Math.floor(Math.random() *3);
     return options[randIdx];
 };
@@ -18,7 +18,7 @@ const genCompChoice = () => {
 ////playing game, selecting user and computer choices
 const playGame = (userChoice) => {
     console.log("user choice = ", userChoice);
-    //Generate computer choice
+    ////Generate computer choice
     const compChoice = genCompChoice();
     console.log("Computer choice = ", compChoice);
     winCheck(userChoice, compChoice);
@@ -28,6 +28,7 @@ const gameDraw = () => {
     console.log("Game was Draw");
         ////displaying game draw in html
         msg.innerText = "Game Was Draw";
+        msg.style.backgroundColor = "#081b31";
 }
 
 ////for checking win conditions
@@ -37,30 +38,32 @@ const winCheck = (userChoice, compChoice) => {
     } else {
         let userWin = true;
         if(userChoice === "rock") {
-            //scissors, paper
+            ////scissors, paper
             userWin = compChoice === "paper" ? false : true;
         } else if(userChoice === "paper"){
-            //rock, scissors
-            userWin = compChoice === "scisssors" ? false : true;
+            ////rock, scissors
+            userWin = compChoice === "scisssors" ? true : false;
         } else {
-            //rock , paper
+            ////rock , paper
             userWin = compChoice === "rock" ? false : true;
         }
-        showWinner(userWin);
+        showWinner(userWin, userChoice, compChoice);
     }
 };
 
 ////for showing who is winner
-showWinner = (userWin) => {
+showWinner = (userWin, userChoice, compChoice) => {
     if(userWin) {
         console.log("you win!");
-        msg.innerText = "You Win";
+        msg.innerText = `You Win! Your ${userChoice} beats ${compChoice}`;
+        msg.style.backgroundColor = "green";
         userWinCount++;
         userScore.innerText = userWinCount;
         
     } else {
         console.log("you lose!");
-        msg.innerText = "You lose";
+        msg.innerText = `You lose. ${compChoice} beats your ${userChoice}`;
+        msg.style.backgroundColor = "red";
         compWinCount++;
         compScore.innerText = compWinCount;
     }
@@ -75,12 +78,16 @@ choices.forEach((choice) => {
     });
 });
 
-//function for reset game
+////function for reset game
 resetGame = () => {
     userWinCount = 0;
     userScore.innerText = userWinCount;
     compWinCount = 0;
     compScore.innerText = compWinCount;
+    console.clear();
+    console.log("Game Reset");
+    msg.style.backgroundColor = "#081b31";
+    msg.innerText = "Play your move";
 };
 
 
