@@ -86,3 +86,36 @@
     font-size: 2rem;
     color: purple;
   }
+
+/* for smal screens  */
+
+@media(max-width:768px){
+  .resp-cont{
+    width: 98vw;
+  }
+
+  .choices{
+    width: 100%;
+  }
+
+  .choices {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+}
+
+@media(max-width:380px) {
+  .msg-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+  }
+
+  h1 {
+    height: 5rem;
+    line-height: 2rem;
+  }
+}
