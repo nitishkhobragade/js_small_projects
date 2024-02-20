@@ -8,16 +8,35 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
+    
     <div class="choices">
         <div class="choice" id="rock">
             <img src="./images/rock.png" alt="rock image" />
         </div>
-        <div class="choice" id="Paper">
+        <div class="choice" id="paper">
             <img src="./images/paper.png" alt="paper.png image" />
         </div>
         <div class="choice" id="scissors">
             <img src="./images/scissors.png" alt="scissors.png image" />
         </div>
     </div>
+
+    <div class="score-board">
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>You</p>
+        </div>
+        <div class="score">
+            <p id="comp-score">0</p>
+            <p>Comp</p>
+        </div>
+    </div>
+
+    <div class="msg-container">
+        <p id="msg">Play your move</p>
+        <button id="resetBtn" onclick="resetGame()">Reset</button>
+    </div>
+
+    <script src="./app.js"></script>
 </body>
 </html>
