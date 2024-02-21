@@ -55,7 +55,7 @@
   }
   
   .msg-container {
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   
   #msg {
@@ -74,6 +74,7 @@
     display: inline;
     padding: 1rem;
     border-radius: 1rem;
+    border: none;
   }
 
   #resultPara {
@@ -108,11 +109,24 @@
     height: 6.8rem;
     width: 6.8rem;
   }
-  
-  
+
   img {
     height: 6.5rem;
     width: 6.5rem;
+  }
+
+  #resetBtn {
+    font-size: 1.5rem;
+    padding: 0.6rem;
+  }
+
+  #msg {
+    background-color: #081b31;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    display: inline;
+    border-radius: 1rem;
   }
   
 }
@@ -145,5 +159,46 @@
   img {
     height: 6rem;
     width: 6rem;
+  }
+}
+
+/* -------rules section ------------------------------ */
+
+.rules {
+  margin-top: 2rem;
+}
+
+.rules h4 {
+  font-size: 1.5rem; /* 24px converted to REM */
+  margin-bottom: 1rem;
+  color: #019f55; /* Green color */
+}
+
+.rules ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.rules li {
+  font-size: 1.2rem; /* 20px converted to REM */
+  margin-bottom: 0.5rem;
+  color: #333; /* Dark gray color */
+}
+
+/* Background gradient for odd li items */
+.rules li:nth-child(odd) {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 0.5rem; /* Add padding */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+/* Media query for screens below 420px */
+@media (max-width: 420px) {
+  .rules h4 {
+      font-size: 1.2rem; /* Decrease font size for smaller screens */
+  }
+
+  .rules li {
+      font-size: 1rem; /* Decrease font size for smaller screens */
   }
 }
