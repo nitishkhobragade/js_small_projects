@@ -26,20 +26,22 @@ const playGame = (userChoice) => {
     winCheck(userChoice, compChoice);
 };
 
-const gameDraw = () => {
+const gameDraw = (userChoice, compChoice) => {
     console.log("Game was Draw");
         ////displaying game draw in html
+        compDiv.style.backgroundColor = "teal";
+        userDiv.style.backgroundColor = "teal";
         msg.innerText = "Game Was Draw";
         msg.style.backgroundColor = "#081b31";
 
-        userDiv.innerText = "";
-        compDiv.innerText = "";
-}
+        userDiv.innerText = `User: ${userChoice}`; //display the slection    
+        compDiv.innerText = `Computer: ${compChoice}`; //display the slection
+};
 
 ////for checking win conditions
 const winCheck = (userChoice, compChoice) => {
     if(userChoice === compChoice) {
-        gameDraw();
+        gameDraw(userChoice, compChoice);
     } else {
         let userWin = true;
         if(userChoice === "rock") {
