@@ -87,7 +87,7 @@ resetGame = () => {
     console.clear();
     console.log("Game Reset");
     msg.style.backgroundColor = "#081b31";
-    msg.innerText = "Play your move";
+    msg.innerText = "Select Your Choice";
 };
 
 
