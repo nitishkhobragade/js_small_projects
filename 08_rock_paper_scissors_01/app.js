@@ -42,7 +42,7 @@ const winCheck = (userChoice, compChoice) => {
             userWin = compChoice === "paper" ? false : true;
         } else if(userChoice === "paper"){
             ////rock, scissors
-            userWin = compChoice === "scisssors" ? true : false;
+            userWin = compChoice === "scissors" ? false : true;
         } else {
             ////rock , paper
             userWin = compChoice === "rock" ? false : true;
