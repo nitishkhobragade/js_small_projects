@@ -88,6 +88,79 @@
     color: purple;
   }
 
+/* -------rules section ------------------------------ */
+
+.rules {
+  margin-top: 2rem;
+}
+
+.rules h4 {
+  font-size: 1.5rem; /* 24px converted to REM */
+  margin-bottom: 1rem;
+  color: #019f55; /* Green color */
+}
+
+.rules ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.rules li {
+  font-size: 1.2rem; /* 20px converted to REM */
+  margin-bottom: 0.5rem;
+  color: #333; /* Dark gray color */
+}
+
+/* Background gradient for odd li items */
+.rules li:nth-child(odd) {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 0.5rem; /* Add padding */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+
+
+
+/* styling result choices --------------  */
+
+
+.choice-result {
+  width: 100%;
+  height: 10px;
+}
+
+.left-div,
+.right-div {
+  position: absolute;
+  top:20%;
+  transform: translateY(-50%);
+  /* width: 35%; */
+  height: 80px; /* Adjust height as needed */
+  color: Black;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.left-div {
+  left: 0;
+  width: 43%;
+}
+
+.right-div {
+  right: 0;
+  width: 57%;
+}
+
+.a1, .a2 {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px; /* Adjust padding as needed */
+  background-color: #019f55; /* Green color */
+  border-radius: 10px;
+}
+
+/* -------------------------  */
+
 /* for small screens  */
 
 @media(max-width:768px){
@@ -97,6 +170,11 @@
 
   .choices{
     width: 100%;
+  }
+
+  #user-score,
+  #comp-score {
+    font-size: 3rem;
   }
 }
 
@@ -131,67 +209,6 @@
   
 }
 
-@media(max-width:380px) {
-  .msg-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-  }
-
-  h1 {
-    height: 5rem;
-    line-height: 5rem;
-  }
-
-  .choices {
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .choice {
-    height: 6.8rem;
-    width: 7rem;
-  }
-  
-  
-  img {
-    height: 6rem;
-    width: 6rem;
-  }
-}
-
-/* -------rules section ------------------------------ */
-
-.rules {
-  margin-top: 2rem;
-}
-
-.rules h4 {
-  font-size: 1.5rem; /* 24px converted to REM */
-  margin-bottom: 1rem;
-  color: #019f55; /* Green color */
-}
-
-.rules ol {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.rules li {
-  font-size: 1.2rem; /* 20px converted to REM */
-  margin-bottom: 0.5rem;
-  color: #333; /* Dark gray color */
-}
-
-/* Background gradient for odd li items */
-.rules li:nth-child(odd) {
-  background-color: #f0f0f0; /* Light gray background */
-  padding: 0.5rem; /* Add padding */
-  border-radius: 0.5rem; /* Rounded corners */
-}
-
 /* Media query for screens below 420px */
 @media (max-width: 420px) {
   .rules h4 {
@@ -200,5 +217,63 @@
 
   .rules li {
       font-size: 1rem; /* Decrease font size for smaller screens */
+  }
+}
+
+/* below 380px -----------------  */
+@media(max-width:380px) {
+
+  .choice-result {
+    width: 100%;
+    height: 10px;
+  }
+  
+  .left-div,
+  .right-div {
+    position: absolute;
+    top:14%;
+    transform: translateY(-50%);
+    height: 80px; /* Adjust height as needed */
+    color: Black;
+    font-size: 1.2rem;
+  }
+
+  #user-score,
+  #comp-score {
+    font-size: 2.5rem;
+  }
+
+  .score-board {
+    margin-top: 1rem;
+  }
+
+  .msg-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  h1 {
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.7rem;
+  }
+
+  .choices {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .choice {
+    height: 6rem;
+    width: 6rem;
+  }
+  
+  
+  img {
+    height: 5rem;
+    width: 5rem;
   }
 }

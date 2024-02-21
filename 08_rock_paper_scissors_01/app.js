@@ -2,6 +2,8 @@ let userScore = document.querySelector("#user-score");
 let compScore = document.querySelector("#comp-score");
 let userWinCount = 0;
 let compWinCount = 0;
+let userDiv = document.querySelector("#user-div");
+let compDiv = document.querySelector("#comp-div");
 
 const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
@@ -29,6 +31,9 @@ const gameDraw = () => {
         ////displaying game draw in html
         msg.innerText = "Game Was Draw";
         msg.style.backgroundColor = "#081b31";
+
+        userDiv.innerText = "";
+        compDiv.innerText = "";
 }
 
 ////for checking win conditions
@@ -54,16 +59,20 @@ const winCheck = (userChoice, compChoice) => {
 ////for showing who is winner
 showWinner = (userWin, userChoice, compChoice) => {
     if(userWin) {
-        console.log("you win!");
-        msg.innerText = `You Win! Your ${userChoice} beats ${compChoice}`;
-        msg.style.backgroundColor = "green";
+        console.log("you win!"); // win display in console
+        userDiv.innerText = `User: ${userChoice}`; //display the slection
+        compDiv.innerText = `Computer: ${compChoice}`; //display the slection
+        msg.innerText = `You Win! Your ${userChoice} beats ${compChoice}`; //display result
+        msg.style.backgroundColor = "green"; //setting backgroind style color of winning
         userWinCount++;
         userScore.innerText = userWinCount;
         
     } else {
-        console.log("you lose!");
-        msg.innerText = `You lose. ${compChoice} beats your ${userChoice}`;
-        msg.style.backgroundColor = "red";
+        console.log("you lose!"); // loose display in console
+        userDiv.innerText = `User: ${userChoice}`; //display the slection
+        compDiv.innerText = `Computer: ${compChoice}`; //display the slection
+        msg.innerText = `You lose. ${compChoice} beats your ${userChoice}`; //display result
+        msg.style.backgroundColor = "red"; //setting backgroind style color of loosing
         compWinCount++;
         compScore.innerText = compWinCount;
     }
@@ -80,6 +89,8 @@ choices.forEach((choice) => {
 
 ////function for reset game
 resetGame = () => {
+    userDiv.innerText = "";
+    compDiv.innerText = "";
     userWinCount = 0;
     userScore.innerText = userWinCount;
     compWinCount = 0;
@@ -88,6 +99,7 @@ resetGame = () => {
     console.log("Game Reset");
     msg.style.backgroundColor = "#081b31";
     msg.innerText = "Select Your Choice";
+
 };
 
 
