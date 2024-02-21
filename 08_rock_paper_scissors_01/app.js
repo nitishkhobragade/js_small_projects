@@ -61,11 +61,18 @@ showWinner = (userWin, userChoice, compChoice) => {
     if(userWin) {
         console.log("you win!"); // win display in console
         userDiv.innerText = `User: ${userChoice}`; //display the slection
+        
         compDiv.innerText = `Computer: ${compChoice}`; //display the slection
         msg.innerText = `You Win! Your ${userChoice} beats ${compChoice}`; //display result
         msg.style.backgroundColor = "green"; //setting backgroind style color of winning
+        // compDiv.style.backgroundColor = "red";
+        // userDivstyle.backgroundColor = "green";
         userWinCount++;
         userScore.innerText = userWinCount;
+        if(msg.style.backgroundColor === "green"){
+            compDiv.style.backgroundColor = "red";
+            userDiv.style.backgroundColor = "green";
+        };
         
     } else {
         console.log("you lose!"); // loose display in console
@@ -73,9 +80,16 @@ showWinner = (userWin, userChoice, compChoice) => {
         compDiv.innerText = `Computer: ${compChoice}`; //display the slection
         msg.innerText = `You lose. ${compChoice} beats your ${userChoice}`; //display result
         msg.style.backgroundColor = "red"; //setting backgroind style color of loosing
+        // compDiv.style.backgroundColor = "green";
+        // userDiv.style.backgroundColor = "red";
         compWinCount++;
         compScore.innerText = compWinCount;
-    }
+        if(msg.style.backgroundColor === "red"){
+            compDiv.style.backgroundColor = "green";
+            userDiv.style.backgroundColor = "red";
+        };
+    };
+    
 };
 
 ////for tracking which option is clicked
