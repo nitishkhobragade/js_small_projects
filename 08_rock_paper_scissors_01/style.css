@@ -87,7 +87,7 @@
     color: purple;
   }
 
-/* for smal screens  */
+/* for small screens  */
 
 @media(max-width:768px){
   .resp-cont{
@@ -97,12 +97,24 @@
   .choices{
     width: 100%;
   }
+}
 
+@media only screen and (max-width: 600px) {
   .choices {
-    display: flex;
-    flex-wrap: wrap;
-
+    gap: 1rem;
   }
+
+  .choice {
+    height: 6.8rem;
+    width: 6.8rem;
+  }
+  
+  
+  img {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+  
 }
 
 @media(max-width:380px) {
@@ -111,11 +123,27 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
 
   h1 {
     height: 5rem;
-    line-height: 2rem;
+    line-height: 5rem;
+  }
+
+  .choices {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .choice {
+    height: 6.8rem;
+    width: 7rem;
+  }
+  
+  
+  img {
+    height: 6rem;
+    width: 6rem;
   }
 }
