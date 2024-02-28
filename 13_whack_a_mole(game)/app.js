@@ -18,8 +18,8 @@ function setGame() {
         document.getElementById("board").appendChild(tile);
     }
 
-    setInterval(setMole, 2000); ////2000 milisonds = 2 seconds me setmole ko call krega
-    setInterval(setPlant, 3000);
+    setInterval(setMole, 1500); ////2000 milisonds = 2 seconds me setmole ko call krega
+    setInterval(setPlant, 1700);
 };
 
 function getRandomTile() {
@@ -29,6 +29,9 @@ function getRandomTile() {
 };
 
 function setMole() {
+    if (gameOver) {
+        return;
+    }
 
     if (currMoleTile) {
         currMoleTile.innerHTML = "";
@@ -46,6 +49,10 @@ function setMole() {
 };
 
 function setPlant() {
+    if (gameOver) {
+        return;
+    }
+
     if (currPlantTile) {
         currPlantTile.innerHTML = "";
     }
@@ -61,6 +68,10 @@ function setPlant() {
 };
 
 function selectTile() {
+    if (gameOver) {
+        return;
+    }
+
     if (this == currMoleTile) {
         score +=10;
         document.getElementById("score").innerText = score.toString(); 
