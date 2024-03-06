@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* html, body {
+    touch-action: manipulation;
+} */
+
 .heading {
     height: 5vh;
     text-align: center;
