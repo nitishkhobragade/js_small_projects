@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *,
 *:before,
 *:after {
@@ -7,18 +9,33 @@
 }
 
 body {
-    height: 100vh;
     background: linear-gradient(135deg, #8052ec,#d161ff);
 }
 
+h1{
+    text-align: center;
+    margin: 5px;
+    color: rgb(34, 255, 5);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.to-do-list{
+    height: 90vh;
+    background: linear-gradient(135deg, #8052ec,#d161ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
 .container {
+    margin-top: 2rem;
     border: 2px solid white;
     width: 40%;
+    height: 85vh;
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
     padding: 30px 40px;
+    overflow-y: scroll;
 }
 
 #newtask {
@@ -67,5 +84,118 @@ body {
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     width: 100%;
-    position: relative;
+}
+
+.task {
+    background-color: #ffffff;
+    height: 50px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #d1d3d4;
+}
+
+.task span {
+    font-family: 'Poppins' sans-serif;
+    font-size: 15px;
+    font-weight: 400px;
+
+}
+
+.task button {
+    background-color: #8052ec;
+    color: #ffffff;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    
+}
+/* for tablet screen --------------------------------------- */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+    
+    #newtask {
+        background-color: #ffffff;
+        padding: 30px 20px;
+        border-radius: 5px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    #newtask input {
+        width: 70%;
+        height: 45px;
+    }
+}
+/* for mobile screen ----------------------------- */
+@media screen and (max-width: 520px) {
+
+    
+    .to-do-list{
+        background: linear-gradient(135deg, #8052ec,#d161ff);
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container {
+        height: 75vh;
+        width: 85%;
+        padding: 10px 20px;
+    }
+
+    #newtask {
+        background-color: #ffffff;
+        padding: 15px 15px;
+        border-radius: 5px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    #newtask input {
+        height: 45px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    #tasks {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-top: 25px;
+        width: 100%;
+    }
+    
+    .task {
+        background-color: #ffffff;
+        height: 50px;
+        padding: 5px 10px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #d1d3d4;
+    }
+    
+    .task span {
+        font-family: 'Poppins' sans-serif;
+        font-size: 12px;
+        font-weight: 400px;
+    }
+    
+    .task button {
+        height: 100%;
+        width: 40px;
+        border-radius: 5px;
+    }
 }
