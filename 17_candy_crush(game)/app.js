@@ -15,8 +15,11 @@ var score = 0;
 window.onload = function() {
     startGame();
 
+    //1/10th of a second
     window.setInterval(function() {
         crushCandy();
+        slideCandy();
+        generateCandy();
     }, 100)
 };
 
@@ -93,6 +96,10 @@ function dragEnter() {
 
 function dragEnd() {
 
+    if(currTile.src.includes("blank") || otherTile.src.includes("blank")) {
+        return;
+    }
+
     let currCoords = currTile.id.split("-"); //id="0-0" -> ["0", "0"]
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
@@ -114,13 +121,22 @@ function dragEnd() {
         let otherImg = otherTile.src;
         currTile.src = otherImg;
         otherTile.src = currImg;
+
+        let validMove = checkValid();
+        if(!validMove) {
+            let currImg = currTile.src;
+            let otherImg = otherTile.src;
+            currTile.src = otherImg;
+            otherTile.src = currImg;
+        }
     }
 };
 
 function crushCandy() {
     crushThree();
     // crushFour();
-    // crushFive()
+    // crushFive();
+    document.getElementById("score").innerText = score;
 }
 
 function crushThree() {
@@ -135,6 +151,7 @@ function crushThree() {
                 candy1.src = "./images/blank.png"
                 candy2.src = "./images/blank.png"
                 candy3.src = "./images/blank.png"
+                score += 3;
             }
         }
     }
@@ -150,7 +167,63 @@ function crushThree() {
                 candy1.src = "./images/blank.png"
                 candy2.src = "./images/blank.png"
                 candy3.src = "./images/blank.png"
+                score += 3;
             }
+        }
+    }
+}
+
+function checkValid() {
+    // check rows 
+    for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < columns-2; c++) {
+        let candy1 = board[r][c];
+        let candy2 = board[r][c+1];
+        let candy3 = board[r][c+2];
+
+        if(candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
+            return true;
+        }
+    }
+}
+
+//check columns
+for (let c = 0; c < columns; c++) {
+    for(let r = 0; r < rows - 2; r++) {
+        let candy1 = board[r][c];
+        let candy2 = board[r+1][c];
+        let candy3 = board[r+2][c];
+
+        if(candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
+            return true;
+        }
+    }
+  }
+
+  return false;
+};
+
+// for sliding the candies 
+function slideCandy() {
+    for (let c = 0; c < columns; c++) {
+        let ind = rows - 1;
+        for (let r = columns - 1; r >= 0; r--) {
+            if(!board[r][c].src.includes("blank")) {
+                board[ind][c].src = board[r][c].src;
+                ind -= 1;
+            }
+        }
+
+        for (let r = ind; r >= 0; r--) {
+            board[r][c].src = "./images/blank.png";
+        }
+    }
+}
+
+function generateCandy() {
+    for (let c = 0; c < columns; c++) {
+        if(board[0][c].src.includes("blank")) {
+            board[0][c].src = "./images/" + randomCandy() + ".png";
         }
     }
 }
