@@ -48,6 +48,17 @@ label i {
     margin-left: 10px;
 }
 
+.html-icon {
+    color: rgb(255, 75, 75);
+}
+
+.css-icon {
+    color: rgb(78, 78, 237);
+}
+
+.js-icon {
+    color: yellow;
+}
 label {
     display: flex;
     align-items: center;
