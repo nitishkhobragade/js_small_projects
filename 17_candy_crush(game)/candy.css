@@ -23,7 +23,17 @@ body {
     flex-wrap: wrap;
 }
 
-#board img {
+/* #board {
+    border: 1px solid red;
+     display: grid;
+     grid-template-columns: repeat(9, 50px);
+     grid-template-rows: repeat(9, 50px);
+     margin: 20px auto;
+     gap: 5px;
+     width: 400px;
+} */
+
+.candy, #board img {
     height: 50px;
     width: 50px;
 }

@@ -45,14 +45,6 @@ function startGame() {
             // Set the source of the tile's image to a randomly selected candy type.
             tile.src = "./images/" + randomCandy() + ".png";
 
-            //Drag Functionality
-            tile.addEventListener("dragstart", dragStart); //click on a candy, intialize drag process
-            tile.addEventListener("dragover", dragOver); //clicking on candy, moving mouse to drag the candy
-            tile.addEventListener("dragenter", dragEnter); //dragging candy into another candy
-            tile.addEventListener("dragleave", dragLeave); // leaving a candy over another candy
-            tile.addEventListener("drop", dragDrop); //dropping a candy over another candy
-            tile.addEventListener("dragend", dragEnd); //after drag process completed, we swap candies
-
             // Append the tile to the HTML element with the id "board".
             document.getElementById("board").append(tile);
 
@@ -63,94 +55,140 @@ function startGame() {
         // Add the current row array to the board array.
         board.push(row);
     }
+
     // Output the populated board array to the console for debugging purposes.
     console.log(board);
-};
 
-// Variables to hold reference of tiles involved in drag and drop
-let currTile = null;
-let otherTile = null;
+    // Check if the device is a touch-enabled device
+    if (isTouchDevice()) {
+        // Touch Event Listeners
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns; c++) {
+                let tile = board[r][c];
+                tile.addEventListener("touchstart", touchStart); // Tap on a candy, initialize touch process
+                tile.addEventListener("touchmove", touchMove); // Moving finger while touching the candy
+                tile.addEventListener("touchend", touchEnd); // After touch process completed, handle the result
+            }
+        }
+    } else {
+        // Drag Event Listeners
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < columns; c++) {
+                let tile = board[r][c];
+                tile.draggable = true;
+                tile.addEventListener("dragstart", dragStart); // Click on a candy, initialize drag process
+                tile.addEventListener("dragover", dragOver); // Clicking on candy, moving mouse to drag the candy
+                tile.addEventListener("dragenter", dragEnter); // Dragging candy into another candy
+                tile.addEventListener("dragleave", dragLeave); // Leaving a candy over another candy
+                tile.addEventListener("drop", dragDrop); // Dropping a candy over another candy
+                tile.addEventListener("dragend", dragEnd); // After drag process completed, swap candies
+            }
+        }
+    }
+}
 
-function dragStart() {
-    //this refers to tile that was clicked for dragging
+// Function to check if the device is touch-enabled
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints;
+}
+
+// Touch event functions
+function touchStart(event) {
     currTile = this;
 }
 
-function dragOver(e) {
-    e.preventDefault();
+function touchMove(event) {
+    event.preventDefault();
 }
 
-function dragLeave() {
-
-}
-
-
-function dragDrop() {
-    //this refers target tile that was dropped on
+function touchEnd(event) {
     otherTile = this;
+    performSwap();
 }
 
-function dragEnter() {
-    e.preventDefault();
+// Drag event functions
+function dragStart(event) {
+    currTile = this;
 }
 
-function dragEnd() {
+function dragOver(event) {
+    event.preventDefault();
+}
 
-    if(currTile.src.includes("blank") || otherTile.src.includes("blank")) {
+function dragEnter(event) {
+    event.preventDefault();
+}
+
+function dragLeave(event) {
+    // Leave empty or add any desired behavior
+}
+
+function dragDrop(event) {
+    otherTile = this;
+    performSwap();
+}
+
+function dragEnd(event) {
+    // Leave empty or add any desired behavior
+}
+
+// Function to perform the swap of candies after touch or drag events
+function performSwap() {
+    if (currTile.src.includes("blank") || otherTile.src.includes("blank")) {
         return;
     }
 
-    let currCoords = currTile.id.split("-"); //id="0-0" -> ["0", "0"]
+    let currCoords = currTile.id.split("-");
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
-    
-    let otherCoords = otherTile.id.split("-"); //id="0-0" -> ["0", "0"]
+
+    let otherCoords = otherTile.id.split("-");
     let r2 = parseInt(otherCoords[0]);
     let c2 = parseInt(otherCoords[1]);
 
-    let moveLeft = c2 == c-1 && r == r2;
-    let moveRight = c2 == c+1 && r == r2;
-
-    let moveUp = r2 == r-1 && c == c2;
-    let moveDown = r2 == r+1 && c == c2;
+    let moveLeft = c2 == c - 1 && r == r2;
+    let moveRight = c2 == c + 1 && r == r2;
+    let moveUp = r2 == r - 1 && c == c2;
+    let moveDown = r2 == r + 1 && c == c2;
 
     let isAdjacent = moveLeft || moveRight || moveUp || moveDown;
 
-    if(isAdjacent) {
+    if (isAdjacent) {
         let currImg = currTile.src;
         let otherImg = otherTile.src;
         currTile.src = otherImg;
         otherTile.src = currImg;
 
         let validMove = checkValid();
-        if(!validMove) {
-            let currImg = currTile.src;
-            let otherImg = otherTile.src;
-            currTile.src = otherImg;
-            otherTile.src = currImg;
+        if (!validMove) {
+            currTile.src = currImg;
+            otherTile.src = otherImg;
         }
     }
-};
+}
 
+
+// Function to crush candies
 function crushCandy() {
     crushThree();
-    // crushFour();
-    // crushFive();
+    // CrushFour(); // Uncomment if you have this function
+    // CrushFive(); // Uncomment if you have this function
     document.getElementById("score").innerText = score;
 }
 
+// Function to crush candies in sets of three
 function crushThree() {
-    // check rows 
+    // Check rows 
     for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < columns-2; c++) {
+        for (let c = 0; c < columns - 2; c++) {
             let candy1 = board[r][c];
-            let candy2 = board[r][c+1];
-            let candy3 = board[r][c+2];
+            let candy2 = board[r][c + 1];
+            let candy3 = board[r][c + 2];
 
-            if(candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
-                candy1.src = "./images/blank.png"
-                candy2.src = "./images/blank.png"
-                candy3.src = "./images/blank.png"
+            if (candy1.src === candy2.src && candy2.src === candy3.src && !candy1.src.includes("blank")) {
+                candy1.src = "./images/blank.png";
+                candy2.src = "./images/blank.png";
+                candy3.src = "./images/blank.png";
                 score += 3;
             }
         }
@@ -187,42 +225,45 @@ function checkValid() {
     }
 }
 
-//check columns
-for (let c = 0; c < columns; c++) {
-    for(let r = 0; r < rows - 2; r++) {
-        let candy1 = board[r][c];
-        let candy2 = board[r+1][c];
-        let candy3 = board[r+2][c];
-
-        if(candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
-            return true;
-        }
-    }
-  }
-
-  return false;
-};
-
-// for sliding the candies 
-function slideCandy() {
+    // Check columns
     for (let c = 0; c < columns; c++) {
-        let ind = rows - 1;
-        for (let r = columns - 1; r >= 0; r--) {
-            if(!board[r][c].src.includes("blank")) {
-                board[ind][c].src = board[r][c].src;
-                ind -= 1;
-            }
-        }
+        for (let r = 0; r < rows - 2; r++) {
+            let candy1 = board[r][c];
+            let candy2 = board[r + 1][c];
+            let candy3 = board[r + 2][c];
 
-        for (let r = ind; r >= 0; r--) {
-            board[r][c].src = "./images/blank.png";
+            if (candy1.src === candy2.src && candy2.src === candy3.src && !candy1.src.includes("blank")) {
+                candy1.src = "./images/blank.png";
+                candy2.src = "./images/blank.png";
+                candy3.src = "./images/blank.png";
+                score += 3;
+            }
         }
     }
 }
 
+// Function to slide candies
+function slideCandy() {
+    for (let c = 0; c < columns; c++) {
+        let ind = rows - 1;
+        for (let r = rows - 1; r >= 0; r--) {
+            if (!board[r][c].src.includes("blank")) {
+                board[ind][c].src = board[r][c].src;
+                ind--;
+            }
+        }
+
+        // Fill the remaining top rows with new candies
+        for (let r = ind; r >= 0; r--) {
+            board[r][c].src = "./images/" + randomCandy() + ".png";
+        }
+    }
+}
+
+// Function to generate new candies at the top
 function generateCandy() {
     for (let c = 0; c < columns; c++) {
-        if(board[0][c].src.includes("blank")) {
+        if (board[0][c].src.includes("blank")) {
             board[0][c].src = "./images/" + randomCandy() + ".png";
         }
     }
