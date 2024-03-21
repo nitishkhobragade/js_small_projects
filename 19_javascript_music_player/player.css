@@ -49,11 +49,20 @@ nav .circle {
     box-shadow: 0 5px 10px var(--boxshadow);
 }
 
-.song-img {
+.img-box {
     width: 220px;
+    height: 220px;
     border-radius: 50%;
     border: 8px solid var(--white);
     box-shadow: 0 10px 60px var(--boxshadow);
+    overflow: hidden;
+    margin: 2px auto;
+    display: flex;
+    justify-content: center;
+}
+.song-img {
+    width: 100%;
+    
 }
 
 .music-player h1 {

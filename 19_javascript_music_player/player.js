@@ -52,6 +52,14 @@ const playlist = [
         thumbnail: "./media/thumb/dhagala-lagli.jpg",
         audioSource: "./media/audio/Dhagala-Lagli-Kala.mp3"
     },
+    // next song
+    {
+        title: "Mobile Cover -Khesari",
+        artist: "Khesari Lal Yadav",
+        thumbnail: "./media/thumb/mobile_cover_khesari.jpg",
+        audioSource: "./media/audio/Aisi Ladki Nahi Jiska Lover Nahi(BhojpuriWap.In).mp3"
+    },
+    // next song
     {
         title: "Bhool Bhulaiya 2 Title Track",
         artist: "Neeraj Shridhar, MellowD, Bob",
@@ -71,6 +79,13 @@ const playlist = [
         artist: "Yo Yo Honey Singh, Armaan Malik, Shaswat Singh",
         thumbnail: "./media/thumb/de_taali.jpg",
         audioSource: "./media/audio/De Taali - Bhool Bhulaiyaa 2 128 Kbps.mp3"
+    },
+    // next song
+    {
+        title: "Kissa Hum Likhenge -Doli Saja Ke Rakhna",
+        artist: "Anuradha Paudwal, M.G. Sreekumar",
+        thumbnail: "./media/thumb/kiss_hum_likhenge.jpg",
+        audioSource: "./media/audio/Kissa Hum Likhenge - Doli Saja Ke Rakhna 128 Kbps.mp3"
     },
     // next song
     {
