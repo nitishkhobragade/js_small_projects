@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Javascript</title>
+    <link rel="stylesheet" href="./player.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <div class="media-section">
+                <!-- song details started  -->
+                <img src="./media/thumb/bhool_bhulaiya2_title_track.jpg" alt="" class="song-img" id="thumbnail">
+                <h1 id="songTitle">Bhool Bhulaiya Title Track</h1>
+                <p id="artist">Song Details - Artist</p>
+                <audio id="song">
+                    <source id="audioSource" src="./media/audio/Bhool Bhulaiyaa 2 Title Track - Bhool Bhulaiyaa 2 128 Kbps.mp3" type="">
+                </audio>
+                <input type="range" value="0" id="progress">
+                <div class="controls">
+                    <div onclick="prevSong()"><i class="fa-solid fa-backward"></i></div>
+                    <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                    <div onclick="nextSong()"><i class="fa-solid fa-forward"></i></div>
+                </div>
+                <input type="range" value="100" id="volumeRange">
+            </div>
+        </div>
+    </div>
+    <script src="./player.js"></script>
+</body>
+</html>
