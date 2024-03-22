@@ -1,11 +1,21 @@
 :root {
-    --mainbg: #333;
+    /* theme 1 pink */
+    /* --mainbg: #333;
     --playerbg: #ffe0e5;
     --maincolor: #f53192;
     --white: #fff;
     --boxshadow: rgba(255, 26, 26, 0.22);
     --vol: #ec64f9;
-    --volscroll: #2e29b7;
+    --volscroll: #2e29b7; */
+
+    /* theme 2 blue */
+    --mainbg: #333;
+    --playerbg: #00d2ff;
+    --maincolor: #006bff;
+    --white: #fff;
+    --boxshadow: rgba(0, 16, 133, 0.22);
+    --vol: #006bff;
+    --volscroll: #0004ff;
 }
 
 * {
