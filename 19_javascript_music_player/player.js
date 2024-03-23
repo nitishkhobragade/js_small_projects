@@ -68,6 +68,34 @@ const playlist = [
     },
     // next song
     {
+        title: "Nek Munda",
+        artist: "Vivi Verma & Fateh Meet Gill",
+        thumbnail: "./media/thumb/nek_munda.jpg",
+        audioSource: "./media/audio/Nek Munda.mp3"
+    },
+    // next song
+    {
+        title: "Gal Dil Di",
+        artist: "Harjit Harman",
+        thumbnail: "./media/thumb/gal_dil_di.jpg",
+        audioSource: "./media/audio/gal dil di.mp3"
+    },
+    // next song
+    {
+        title: "Straight Up",
+        artist: "Prm Nagra, Josh Sidhu",
+        thumbnail: "./media/thumb/straight_up.jpg",
+        audioSource: "./media/audio/straight up.mp3"
+    },
+    // next song
+    {
+        title: "Murder - Real Boss",
+        artist: "Real Boss",
+        thumbnail: "./media/thumb/murder_real_boss.jpg",
+        audioSource: "./media/audio/murder.mp3"
+    },
+    // next song
+    {
         title: "Abrar's Entry Jamal Kudu",
         artist: "Harshvardhan Rameshwar",
         thumbnail: "./media/thumb/jamal_kudu.jpg",
@@ -119,8 +147,17 @@ function prevSong() {
     loadSong(currentIndex);
     document.getElementById("song").load();
     song.play();
-    
 }
 
 // Initial load
 loadSong(currentIndex);
+
+let rotateImg = document.getElementById("thumbnail"); // Get the image element
+
+song.onplay = function() { // When the song starts playing
+    rotateImg.classList.add("rotate"); // Add the 'rotate' class to the image
+};
+
+song.onpause = function() { // When the song is paused
+    rotateImg.classList.remove("rotate"); // Remove the 'rotate' class from the image
+};

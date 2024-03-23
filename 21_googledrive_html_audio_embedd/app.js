@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //template for audio
     var template = "https://docs.google.com/uc?export=open&id=YOURGOOGLEMP3ID";
     // template for image 
-    var imgTemplate = "http://drive.google.com/uc?export=view&id=URLIDHere";
+    // var imgTemplate = "http://drive.google.com/uc?export=view&id=URLIDHere";
+    var imgTemplate = "https://drive.google.com/thumbnail?id=URLIDHere";
 
     document.getElementById('generateBtn').addEventListener('click', generateUrl);
 

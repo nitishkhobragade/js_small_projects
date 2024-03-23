@@ -74,6 +74,21 @@ nav .circle {
     width: 100%;  
 }
 
+/* to rotate the image  */
+.rotate {
+    animation: rotateImage 5s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* to rotate the image  */
+
 .music-player h1 {
     font-size: 20px;
     font-weight: 400;
