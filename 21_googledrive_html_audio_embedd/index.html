@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://nitishkhobragade.github.io/portfolio.nitish/img/favicon.png">
+  <title>Generate google drive audio html url</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        
+        <div class="container">
+            <h1>Google Drive Link To HTML Embedd Link Generator</h1>
+            <div class="inputPart">
+                <div class="audioPart">
+                    <label for="mainUrl" class="heading">Enter Audio URL:</label>
+                    <input type="text" id="mainUrl">
+                </div>
+    
+                <div class="imgPart">
+                    <label for="imgUrl" class="heading">Enter Image URL:</label>
+                    <input type="text" id="imgUrl">
+                </div>
+            </div>
+            <!-- for copy msg  -->
+            <div id="copyMessage" class="copy-message">Link copied</div>
+
+            <button id="generateBtn">Generate URL</button> <button id="resetBtn">Reset</button>
+    
+            <div class="outputPart">
+                <div class="audioOutput">
+                    <h4>Audio link</h4>
+                    <div id="result"></div>
+                    <button id="copyAudio">Copy Link</button>
+                </div>
+    
+                <div class="imgOutput">
+                    <h4>Image link</h4>
+                    <div id="imgResult"></div>
+                    <button id="copyImg">Copy Link</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  
+
+  <script src="./app.js"></script>
+</body>
+</html>
