@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --blue: #0071fF;
+    --light-blue: #b6dbf6;
+    --dark-blue: #005dd1;
+    --grey: #f2f2f2;
+    --white: #fff;
+    --para-color: #999;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--light-blue);
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.img-section {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: var(--grey);
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+}
+
+.img-section .icon {
+    font-size: 100px;
+}
+
+.img-section h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.img-section p {
+    color: var(--para-color);
+}
+
+.img-section p span {
+    font-weight: 600;
+}
+
+/* properties for position  center image accurately */
+.img-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 100;
+}
+
+.img-section::before {
+    content: attr(data-img);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    color: var(--white);
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.img-section.active:hover::before {
+    opacity: 1;
+} 
+
+.select-img {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 15px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.select-img:hover {
+    background: var(--dark-blue);
+}
+
+
+
