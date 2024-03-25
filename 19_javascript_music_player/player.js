@@ -1,11 +1,31 @@
 let progress = document.getElementById("progress");
 let song = document.getElementById("song");
 let ctrlIcon = document.getElementById("ctrlIcon");
+let currentTimeDisplay = document.getElementById("currentTime");
+let totalTimeDisplay = document.getElementById("totalTime");
 
 song.onloadedmetadata = function() {
     progress.max = song.duration;
     progress.value = song.currentTime;
+    updateTimes();
 }
+
+// Function to format time in minutes and seconds
+function formatTime(seconds) {
+    let minutes = Math.floor(seconds / 60);
+    let remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+// Update current time and total time
+function updateTimes() {
+    currentTimeDisplay.textContent = formatTime(song.currentTime);
+    totalTimeDisplay.textContent = formatTime(song.duration);
+}
+
+
+
+
 
 function playPause() {
     if(ctrlIcon.classList.contains("fa-pause")) {
@@ -23,12 +43,14 @@ function playPause() {
 if(song.play()) {
     setInterval(() => {
         progress.value = song.currentTime;
+        updateTimes();
     }, 500);
 }
 
 progress.onchange = function(){
     song.play();
     song.currentTime = progress.value;
+    updateTimes();
 }
 
 // setting up sound volume
@@ -156,8 +178,16 @@ let rotateImg = document.getElementById("thumbnail"); // Get the image element
 
 song.onplay = function() { // When the song starts playing
     rotateImg.classList.add("rotate"); // Add the 'rotate' class to the image
+    ctrlIcon.classList.add("fa-pause"); 
+    ctrlIcon.classList.remove("fa-play"); 
 };
+
 
 song.onpause = function() { // When the song is paused
     rotateImg.classList.remove("rotate"); // Remove the 'rotate' class from the image
 };
+
+song.onended = function() {
+    nextSong();
+};
+

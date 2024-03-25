@@ -4,6 +4,8 @@
     --playerbg: #ffe0e5;
     --maincolor: #f53192;
     --white: #fff;
+    --grad1: #EF16B5;
+    --grad2: #F276DB;
     --boxshadow: rgba(255, 26, 26, 0.22);
     --vol: #ec64f9;
     --volscroll: #2e29b7; */
@@ -12,6 +14,10 @@
     --mainbg: #333;
     --playerbg: #00d2ff;
     --maincolor: #006bff;
+    --grad1: rgba(255, 227, 2, 0.41);
+    --grad2: rgb(59, 188, 241);
+    --grad3: #00f2ff;
+    --grad4: #29ff7b;
     --white: #fff;
     --boxshadow: rgba(0, 16, 133, 0.22);
     --vol: #006bff;
@@ -37,6 +43,12 @@
 
 .music-player{
     background: var(--playerbg);
+    /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=37f5ff&c2=34cf31&gt=l&gd=dtl
+*/
+background: #37F5FF;
+background: linear-gradient(135deg, var(--grad3), var(--grad4));
     width: 400px;
     padding: 25px 35px;
     text-align: center;
@@ -118,7 +130,7 @@ nav .circle {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 8px solid #fff;
+    border: 8px solid var(--white);
     box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
 }
 
@@ -165,8 +177,12 @@ nav .circle {
     width:20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid var(--white);
+    border: 4px solid var(--white);
     box-shadow: 0 5px 10px var(--boxshadow);
+}
+
+.timeSection {
+    margin-top: 0.6rem;
 }
   
 
