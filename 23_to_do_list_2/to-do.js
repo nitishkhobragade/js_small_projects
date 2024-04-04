@@ -1,20 +1,26 @@
 const item = document.querySelector("#item");
 const toDoBox = document.querySelector("#to-do-box");
+const addBtn = document.querySelector(".addBtn");
 
-item.addEventListener(
-    "keyup",
-    function(event){
-        if (event.key == "Enter") {
-            // console.log(this.value);
-            if(item.value == "") {
-                alert("Please write task before enter...");
-            } else {
-                addToDo(this.value);
-                this.value = "";
-            }
-        }
+// Function to add task
+function addTask() {
+    if(item.value == "") {
+        alert("Please write task before enter...");
+    } else {
+        addToDo(item.value);
+        item.value = "";
     }
-)
+}
+
+// Event listener for Enter key press
+item.addEventListener("keyup", function(event){
+    if (event.key == "Enter") {
+        addTask();
+    }
+});
+
+// Event listener for button click
+addBtn.addEventListener("click", addTask);
 
 const addToDo = (item) => {
     const listItem = document.createElement("li");
@@ -39,6 +45,7 @@ const addToDo = (item) => {
 
     toDoBox.appendChild(listItem);
 }
+
 
 ////to prevent from accidental refresh
 window.addEventListener('beforeunload', function(event) {
