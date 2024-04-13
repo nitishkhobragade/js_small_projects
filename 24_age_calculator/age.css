@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(130deg, #4911ff, #e062ff);
+    flex-direction: column;
+}
+
+.container {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .date-container {
+    padding: 10px 12px;
+    width: 300px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.date-container input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: #dcdcdc;
+}
+
+.date-container button {
+    width: 120px;
+    height: 100%;
+    background-color: #4911ff;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.date-container button:active {
+    transform: scale(.9);
+}
+
+.container .set-date-container {
+    background-color: #fff;
+    width: 300px;
+    padding: 30px 0;
+    margin-top: 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .set-date-container span {
+    width: 80px;
+    height: 80px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    font-size: 3.2em;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.container .set-date-container span:nth-child(1)::after,
+.container .set-date-container span:nth-child(2)::after,
+.container .set-date-container span:nth-child(3)::after {
+    content: 'year';
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container .set-date-container span:nth-child(2)::after {
+    content: 'month';
+}
+
+.container .set-date-container span:nth-child(3)::after {
+    content: 'day';
+}
