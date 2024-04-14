@@ -1,13 +1,12 @@
 let cal_btn = document.querySelector(".calculator");
-let getDate, dobDate, dobMonth, dobYear;
 let year, month, date;
 
 cal_btn.addEventListener('click', () => {
     let dob = document.querySelector("#date").value;
-    getDate = new Date(dob);
-    dobDate = getDate.getDate();
-    dobMonth = getDate.getMonth() + 1;
-    dobYear = getDate.getFullYear();
+    let getDate = new Date(dob);
+    let dobDate = getDate.getDate();
+    let dobMonth = getDate.getMonth() + 1;
+    let dobYear = getDate.getFullYear();
 
     // You can log the variables here if you want to see them every time the button is clicked
     console.log(getDate, dobDate, dobMonth, dobYear);
@@ -15,18 +14,40 @@ cal_btn.addEventListener('click', () => {
     let currentDate = new Date();
     let currDate = currentDate.getDate();
     let currYear = currentDate.getFullYear();
-    let currMonth = currentDate.getMonth();
+    let currMonth = currentDate.getMonth() + 1;
+
+    // Set variables
+    let setYear = document.querySelector(".set-year");
+    let setMonth = document.querySelector(".set-month");
+    let setDate = document.querySelector(".set-day");
 
     // Calculate the age
     year = currYear - dobYear;
-    console.log(year);
     if (currMonth >= dobMonth) {
         month = currMonth - dobMonth;
+        if (currDate < dobDate) {
+            month--;
+            let daysInLastMonth = new Date(currYear, currMonth - 1, 0).getDate();
+            date = daysInLastMonth - dobDate + currDate;
+        } else {
+            date = currDate - dobDate;
+        }
     } else {
         year--;
-        date = new Date(year, month, 0).getDate() + currDate - dobDate;
+        let monthsUntilNextBirthday = dobMonth - currMonth;
+        if (currDate < dobDate) {
+            monthsUntilNextBirthday--;
+            let daysInLastMonth = new Date(currYear, currMonth - 1, 0).getDate();
+            date = daysInLastMonth - dobDate + currDate;
+        } else {
+            date = currDate - dobDate;
+        }
+        month = 12 - monthsUntilNextBirthday;
     }
-    console.log(year, date, month);
-});
 
-// Now you can access getDate, dobDate, dobMonth, dobYear, year, date, and month outside the event listener function
+    // Output the age
+    console.log(year, date, month);
+    setYear.textContent = year;
+    setMonth.textContent = month;
+    setDate.textContent = date;
+});
