@@ -29,12 +29,14 @@ function switchTab(clickedTab) {
             //kya search form wala container invisible hai, if yes then make it visible
             userInfoContainer.classList.remove("active");
             grantAccessContainer.classList.remove("active");
+            errorContainer.classList.remove("active");
             searchForm.classList.add("active");
         }
         else {
             //pahle search wale tab par the ab your weather tab visible karna hai
             searchForm.classList.remove("active");
             userInfoContainer.classList.remove("active");
+            errorContainer.classList.remove("active");
             //ab mai your weather tab me aa gaya hu , toh weather bhi display karna padega, lets check local storage first
             //for co ordinates we have saved them here
             getfromSessionStorage();
@@ -70,6 +72,7 @@ async function fetchUserWeatherInfo(coordinates) {
     grantAccessContainer.classList.remove("active");
     //make loader visible
     loadingScreen.classList.add("active");
+    errorContainer.classList.remove("active");
 
     //API Call
     try{
@@ -150,8 +153,10 @@ searchForm.addEventListener("submit", (e) => {
 
 async function fetchSearchWeatherInfo(city) {
     loadingScreen.classList.add("active");
+    errorContainer.classList.remove("active");
     userInfoContainer.classList.remove("active");
     grantAccessContainer.classList.remove("active");
+    
 
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
@@ -159,12 +164,15 @@ async function fetchSearchWeatherInfo(city) {
         // Check if the response status is not OK (200-299)
         if (!response.ok) {
             const errorData = await response.json();
+            errorContainer.classList.add("active");
             throw new Error(errorData.message || "Failed to fetch weather information.");
+            
         }
 
         const data = await response.json();
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
+        errorContainer.classList.remove("active");
         renderWeatherInfo(data);
     } catch (err) {
         console.log("Found Error", err);
