@@ -145,6 +145,7 @@ searchForm.addEventListener("submit", (e) => {
 
     if (cityName === "") return;
     fetchSearchWeatherInfo(cityName);
+    searchInput.value = "";
 });
 
 async function fetchSearchWeatherInfo(city) {
