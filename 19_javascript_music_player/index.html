@@ -15,15 +15,29 @@
                 <div class="circle">
                     <i class="fa-solid fa-angle-left"></i>
                 </div>
-                <div class="circle">
+                <div class="circle playlistIcon">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </nav>
+            <div id="playlist-container" class="playlist-container">
+
+            </div>
+
+
+
             <div class="media-section">
+
+                 
+
                 <!-- song details started  -->
-                <div class="img-box">
-                    <img src="./media/thumb/bhool_bhulaiya2_title_track.jpg" alt="" class="song-img" id="thumbnail">
+                <!-- Background blur element -->
+                <div class="imgCont">
+                    <!-- rotating image box  -->
+                    <div class="img-box">
+                        <img src="./media/thumb/bhool_bhulaiya2_title_track.jpg" alt="" class="song-img" id="thumbnail">
+                    </div>
                 </div>
+                
                 <h1 id="songTitle">Bhool Bhulaiya Title Track</h1>
                 <p id="artist">Song Details - Artist</p>
                 <audio id="song">
@@ -38,7 +52,14 @@
                     <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
                     <div onclick="nextSong()"><i class="fa-solid fa-forward"></i></div>
                 </div>
-                <input type="range" value="100" id="volumeRange">
+                <div class="volContainer">
+
+                    <i class="fa-solid fa-volume-xmark"></i>
+
+                    <input type="range" value="100" id="volumeRange">
+
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
             </div>
         </div>
     </div>

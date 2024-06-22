@@ -3,6 +3,9 @@ let song = document.getElementById("song");
 let ctrlIcon = document.getElementById("ctrlIcon");
 let currentTimeDisplay = document.getElementById("currentTime");
 let totalTimeDisplay = document.getElementById("totalTime");
+let playlistIcon = document.getElementsByClassName("playlistIcon")[0]; // Assuming there's only one playlistIcon
+let playlistContainer = document.getElementById("playlist-container");
+
 
 song.onloadedmetadata = function() {
     progress.max = song.duration;
@@ -154,6 +157,15 @@ function loadSong(index) {
     document.getElementById("artist").textContent = currentSong.artist;
     document.getElementById("audioSource").src = currentSong.audioSource;
     document.getElementById("song").load();
+
+    setBlurBackground(currentSong.thumbnail); // Set blurred background
+
+     // Remove 'playing' class from all paragraphs
+     const paragraphs = document.querySelectorAll(".playlist-container p");
+     paragraphs.forEach(p => p.classList.remove("playing"));
+ 
+     // Add 'playing' class to the current paragraph
+     paragraphs[index].classList.add("playing");
 }
 
 function nextSong() {
@@ -170,6 +182,47 @@ function prevSong() {
     document.getElementById("song").load();
     song.play();
 }
+
+// Function to set blurred background image
+function setBlurBackground(imageUrl) {
+    const imgBlur = document.querySelector(".imgCont");
+    imgBlur.style.backgroundImage = `url(${imageUrl})`;
+}
+
+// For rendering playlist
+function renderPlaylist(listArray, divId) {
+    var playlistContainer = document.getElementById(divId);
+    playlistContainer.innerHTML = '';
+
+    for (let i = 0; i < listArray.length; i++) {
+        // Creating paragraph
+        const para = document.createElement("p");
+        let num = 1;
+        // Setting text in paragraph
+        para.textContent = (num + i) + ". " + listArray[i].title;
+
+        // Adding click event listener to each paragraph
+        para.addEventListener('click', function() {
+            loadSong(i);
+            song.play();
+            togglePlaylist()
+        });
+
+
+        // Appending paragraph to the container
+        playlistContainer.appendChild(para);
+    }
+}
+
+renderPlaylist(playlist, 'playlist-container');
+
+function togglePlaylist() {
+    playlistContainer.classList.toggle('visible');
+}
+
+playlistIcon.addEventListener('click', togglePlaylist);
+
+
 
 // Initial load
 loadSong(currentIndex);
