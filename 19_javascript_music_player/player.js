@@ -185,8 +185,12 @@ function prevSong() {
 
 // Function to set blurred background image
 function setBlurBackground(imageUrl) {
-    const imgBlur = document.querySelector(".imgCont");
-    imgBlur.style.backgroundImage = `url(${imageUrl})`;
+    // const imgBlur = document.querySelector(".imgCont");
+    // imgBlur.style.background = `url(${imageUrl})`;
+
+    const bgImg = document.getElementById('bgImg');
+    bgImg.src = imageUrl;
+
 }
 
 // For rendering playlist
@@ -218,6 +222,17 @@ renderPlaylist(playlist, 'playlist-container');
 
 function togglePlaylist() {
     playlistContainer.classList.toggle('visible');
+
+    let listIcon = document.getElementById('listOption');
+
+
+    if(playlistContainer.classList.contains('visible')) {
+        listIcon.classList.remove('fa-bars');
+        listIcon.classList.add('fa-x');
+    } else {
+        listIcon.classList.remove('fa-x');
+        listIcon.classList.add('fa-bars');
+    }
 }
 
 playlistIcon.addEventListener('click', togglePlaylist);
