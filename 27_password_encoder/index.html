@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Encoder & Decoder</title>
+    <link rel="icon" type="image/x-icon" href="../logo-n.png">
+    <link rel="icon" type="image/x-icon" href="https://nitishkhobragade.github.io/portfolio.nitish//img/favicon.png">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center text-gray-100">
+
+    <!-- Container -->
+    <div class="w-full max-w-md p-8 rounded-lg shadow-lg bg-white text-gray-800 space-y-6">
+
+        <!-- Header -->
+        <h2 class="text-2xl font-bold text-center text-indigo-600">Password Encoder & Decoder</h2>
+        <p class="text-center text-gray-500">Enter your password and encode/decode it securely</p>
+
+        <!-- Input Section -->
+        <div class="space-y-4">
+            <label for="passwordInput" class="block text-gray-700 font-medium">Enter Password:</label>
+            <input 
+                type="text" 
+                id="passwordInput" 
+                placeholder="Enter password here" 
+                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+            />
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-around space-x-4">
+            <button 
+                onclick="encodePassword()" 
+                class="w-full py-2 rounded-lg bg-indigo-500 hover:bg-indigo-700 transition duration-200 text-white font-semibold transform hover:scale-105"
+            >
+                Encode
+            </button>
+            <button 
+                onclick="decodePassword()" 
+                class="w-full py-2 rounded-lg bg-green-500 hover:bg-green-700 transition duration-200 text-white font-semibold transform hover:scale-105"
+            >
+                Decode
+            </button>
+        </div>
+
+        <!-- Result Output and Copy Button -->
+        <div class="mt-6 space-y-4">
+            <p class="text-lg font-semibold text-gray-700">Result:</p>
+            <div id="result" class="mt-2 p-4 rounded-lg bg-gray-100 text-gray-900 text-center font-mono">
+                <!-- Encoded or decoded result will be displayed here -->
+            </div>
+            <!-- Copy Button -->
+            <button 
+                onclick="copyToClipboard()" 
+                class="w-full py-2 rounded-lg bg-blue-500 hover:bg-blue-700 transition duration-200 text-white font-semibold transform hover:scale-105"
+            >
+                Copy Result
+            </button>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="./crypto.js"></script>
+</body>
+</html>
