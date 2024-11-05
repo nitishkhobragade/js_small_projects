@@ -246,7 +246,6 @@ const projectData1 = [
       playButton.href = item.playUrl;
       playButton.className = 'text-white px-4 py-2 m-1 bg-blue-600 rounded-lg hover:bg-blue-500 transition duration-200';
       playButton.textContent = 'Play';
-      playButton.target = '_blank';
       hoverButtons.appendChild(playButton);
 
       // Source Code 1 button
