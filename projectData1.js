@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Flex Cards with Images</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
-
-  <div id="cardContainer" class="flex flex-wrap justify-center gap-4 p-4"></div>
-
-  <script>
-    // Data object containing card information
-    // const items = [
-    //   {
-    //     name: 'Password Encoder & Decoder',
-    //     imageUrl: './portfolio-thumb.png', // Replace with actual image URL
-    //     playUrl: './27_password_encoder/index.html',
-    //     sourceUrl1: 'https://source1.example.com/1',
-    //     sourceUrl2: 'https://source2.example.com/1',
-    //   },
-    //   {
-    //     name: 'Project 2',
-    //     imageUrl: 'https://via.placeholder.com/150', // Replace with actual image URL
-    //     playUrl: 'https://play.example.com/2',
-    //     sourceUrl1: 'https://source1.example.com/2',
-    //     sourceUrl2: 'https://source2.example.com/2',
-    //   },
-    //   // Add more items as needed
-    // ];
-
-    const projectData1 = [
+const projectData1 = [
 
     {
         name: "27. Password Encoder & Decoder (HTML, CSS, JavScript)",
@@ -249,62 +217,58 @@
   ];
 
 
-    // Function to create cards dynamically
-    function createCards() {
-      const container = document.getElementById('cardContainer');
-      projectData1.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'relative bg-white shadow-lg rounded-lg overflow-hidden w-64 h-65 flex flex-col items-center justify-center p-4 hover:shadow-2xl transition-all duration-300';
+  // Function to create cards dynamically
+  function createCards() {
+    const container = document.getElementById('cardContainer');
+    projectData1.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'relative bg-white shadow-lg rounded-lg overflow-hidden w-64 h-65 flex flex-col items-center justify-center p-4 hover:shadow-2xl transition-all duration-300';
 
-        // Project image
-        const img = document.createElement('img');
-        img.src = item.imageUrl;
-        img.alt = item.name;
-        img.className = 'w-full h-32 object-cover mb-2'; // Adjust as needed
-        card.appendChild(img);
+      // Project image
+      const img = document.createElement('img');
+      img.src = item.imageUrl;
+      img.alt = item.name;
+      img.className = 'w-full h-32 object-cover mb-2'; // Adjust as needed
+      card.appendChild(img);
 
-        // Card title
-        const title = document.createElement('h2');
-        title.textContent = item.name;
-        title.className = 'text-center text-lg font-bold text-gray-800';
-        card.appendChild(title);
+      // Card title
+      const title = document.createElement('h2');
+      title.textContent = item.name;
+      title.className = 'text-center text-lg font-bold text-gray-800';
+      card.appendChild(title);
 
-        // Hover buttons container
-        const hoverButtons = document.createElement('div');
-        hoverButtons.className = 'absolute inset-0 bg-gray-900 bg-opacity-75 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300';
+      // Hover buttons container
+      const hoverButtons = document.createElement('div');
+      hoverButtons.className = 'absolute inset-0 bg-gray-900 bg-opacity-75 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300';
 
-        // Play button
-        const playButton = document.createElement('a');
-        playButton.href = item.playUrl;
-        playButton.className = 'text-white px-4 py-2 m-1 bg-blue-600 rounded-lg hover:bg-blue-500 transition duration-200';
-        playButton.textContent = 'Play';
-        playButton.target = '_blank';
-        hoverButtons.appendChild(playButton);
+      // Play button
+      const playButton = document.createElement('a');
+      playButton.href = item.playUrl;
+      playButton.className = 'text-white px-4 py-2 m-1 bg-blue-600 rounded-lg hover:bg-blue-500 transition duration-200';
+      playButton.textContent = 'Play';
+      playButton.target = '_blank';
+      hoverButtons.appendChild(playButton);
 
-        // Source Code 1 button
-        const sourceButton1 = document.createElement('a');
-        sourceButton1.href = item.sourceCode1;
-        sourceButton1.className = 'text-white px-4 py-2 m-1 bg-green-600 rounded-lg hover:bg-green-500 transition duration-200';
-        sourceButton1.textContent = 'Source Code 1';
-        sourceButton1.target = '_blank';
-        hoverButtons.appendChild(sourceButton1);
+      // Source Code 1 button
+      const sourceButton1 = document.createElement('a');
+      sourceButton1.href = item.sourceCode1;
+      sourceButton1.className = 'text-white px-4 py-2 m-1 bg-green-600 rounded-lg hover:bg-green-500 transition duration-200';
+      sourceButton1.textContent = 'Source Code 1';
+      sourceButton1.target = '_blank';
+      hoverButtons.appendChild(sourceButton1);
 
-        // Source Code 2 button
-        const sourceButton2 = document.createElement('a');
-        sourceButton2.href = item.sourceCode2;
-        sourceButton2.className = 'text-white px-4 py-2 m-1 bg-red-600 rounded-lg hover:bg-red-500 transition duration-200';
-        sourceButton2.textContent = 'Source Code 2';
-        sourceButton2.target = '_blank';
-        hoverButtons.appendChild(sourceButton2);
+      // Source Code 2 button
+      const sourceButton2 = document.createElement('a');
+      sourceButton2.href = item.sourceCode2;
+      sourceButton2.className = 'text-white px-4 py-2 m-1 bg-red-600 rounded-lg hover:bg-red-500 transition duration-200';
+      sourceButton2.textContent = 'Source Code 2';
+      sourceButton2.target = '_blank';
+      hoverButtons.appendChild(sourceButton2);
 
-        card.appendChild(hoverButtons);
-        container.appendChild(card);
-      });
-    }
+      card.appendChild(hoverButtons);
+      container.appendChild(card);
+    });
+  }
 
-    // Initialize cards on page load
-    window.onload = createCards;
-  </script>
-
-</body>
-</html>
+  // Initialize cards on page load
+  window.onload = createCards;
