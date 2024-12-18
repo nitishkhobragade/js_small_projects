@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title of the Website -->
+  <title>CHAIN KI CHAI - Lanji | Best Chai in Balaghat</title>
+
+  <!-- Description Meta Tag -->
+  <meta name="description" content="CHAIN KI CHAI LANJI offers the best chai, coffee, snacks, and more. Located in Balaghat, we serve delicious beverages with a great ambiance.">
+
+  <!-- Keywords Meta Tag -->
+  <meta name="keywords" content="CHAIN KI CHAI LANJI, CHAIN KI CHAI BALAGHAT, Balaghat chai, best chai in Balaghat, Nitish Khobragade JavaScript website, website developer Nitish Khobragade, owner Yashwant Panche, chai shop Lanji, delicious chai, coffee, snacks, Balaghat">
+
+  <!-- Author Meta Tag -->
+  <meta name="author" content="Nitish Khobragade">
+
+  <!-- Favicon for the Browser Tab -->
+  <link rel="icon" href="img/logo.jpg" type="image/x-icon"> <!-- For .ico files -->
+  <!-- OR -->
+  <!-- <link rel="icon" href="img/logo.png" type="image/png"> --> <!-- For .png files -->
+
+  <!-- If you want to include multiple sizes (for different devices) -->
+  <link rel="icon" href="img/logo.jpg" sizes="16x16" type="image/x-icon">
+  <link rel="icon" href="img/logo.jpg" sizes="32x32" type="image/x-icon">
+  <link rel="icon" href="img/logo.jpg" sizes="48x48" type="image/x-icon">
+
+  <!-- You can also add a larger icon for mobile devices -->
+  <link rel="apple-touch-icon" href="img/logo.jpg"> <!-- For iOS devices -->
+  <script src="https://cdn.tailwindcss.com"></script>
+ 
+  <!-- linking styles  -->
+   <link rel="stylesheet" href="chai.css">
+
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navigation Header (Sticky) -->
+  <header class="bg-yellow-500 text-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4 relative">
+      <h1 class="text-2xl font-bold">CHAIN KI CHAI</h1>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul id="menu" class="hidden md:flex space-x-6 absolute md:relative top-full md:top-auto left-0 w-full md:w-auto bg-yellow-500 md:bg-transparent md:flex-row flex-col p-4 md:p-0 z-10">
+        <li><a href="#home" class="hover:text-yellow-200">Home</a></li>
+        <li><a href="#menu" class="hover:text-yellow-200">Menu</a></li>
+        <li><a href="#about" class="hover:text-yellow-200">About</a></li>
+        <li><a href="#contact" class="hover:text-yellow-200">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Description Section with Images -->
+  <section id="home" class="container mx-auto py-12 text-center">
+    <h2 class="text-4xl font-bold mb-4 text-yellow-500">Welcome to CHAIN KI CHAI</h2>
+    <p class="text-lg text-gray-600 mb-8">
+      Your one-stop destination for delicious chai, coffee, snacks, and more.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <!-- First Image -->
+      <div class="w-3/4 sm:w-2/3 md:w-1/3 lg:w-1/4">
+        <img 
+          src="img/Home1.jpg" 
+          alt="Chai Shop" 
+          class="w-full h-auto object-cover rounded-lg shadow-md"
+        />
+      </div>
+      <!-- Second Image -->
+      <div class="w-3/4 sm:w-2/3 md:w-1/3 lg:w-1/4">
+        <img 
+          src="img/homedelivery.jpg" 
+          alt="Chai Table" 
+          class="w-full h-auto object-cover rounded-lg shadow-md"
+        />
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- Product Portfolio Section -->
+  <section id="menu" class="container mx-auto py-12">
+    <h3 class="text-3xl font-bold text-center text-yellow-500 mb-8">Our Products</h3>
+    <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Product Cards will be generated here -->
+    </div>
+  </section>
+
+  <!-- Google Map Section with Responsiveness and Margins -->
+<!-- Google Map Section with Responsiveness and Margins -->
+<div class="map-container shadow-lg rounded-lg overflow-hidden mb-6 mx-4 md:mx-8 max-w-full">
+  <h2 class="text-center font-bold mb-4">Find Us Here</h2>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3712.143461198039!2d80.53502507526973!3d21.502099980268344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDMwJzA3LjYiTiA4MMKwMzInMTUuNCJF!5e0!3m2!1sen!2sin!4v1734525695617!5m2!1sen!2sin" 
+    width="100%" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<!-- Footer Section with Social Images -->
+<footer class="bg-yellow-500 text-white py-6">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="w-full text-center md:w-auto">&copy; 2024 CHAIN KI CHAI. All Rights Reserved.</p>
+    <div class="flex justify-center items-center space-x-4">    
+      <a href="https://www.facebook.com/people/Chain-ki-chai-lanji/100094358538813/" target="_blank">
+        <img src="./icons/facebook.png" alt="Facebook" class="w-8 h-8">
+      </a>
+      <a href="https://wa.me/+918962529205?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank">
+        <img src="./icons/whatsapp.png" alt="Whatsapp" class="w-8 h-8">
+      </a>
+      <a href="https://www.instagram.com/chain_ki_chai_lanji/" target="_blank">
+        <img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8">
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <img src="./icons/twitter.png" alt="Twitter" class="w-8 h-8">
+      </a>
+    </div>
+    <div class="w-full text-center md:w-auto mt-4 md:mt-0">
+      <p>This Website is developed by <a href="https://nitishkhobragade.github.io/portfolio.nitish/" class="underline">Nitish Khobragade</a></p>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- JavaScript for Responsive Navigation and Product List -->
+  <script src="./chai.js"></script>
+</body>
+</html>

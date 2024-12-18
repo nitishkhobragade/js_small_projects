@@ -1,4 +1,11 @@
 const projectData1 = [
+  {
+    name: "28. Chain Ki Chai Portfolio (HTML, CSS, JavScript)",
+    playUrl: "./28_chain_ki_chai/index.html",
+    sourceCode1: "#",
+    sourceCode2: "#",
+    imageUrl: "./28_chain_ki_chai/chainkichai.png"
+  },
 
     {
         name: "27. Password Encoder & Decoder (HTML, CSS, JavScript)",
