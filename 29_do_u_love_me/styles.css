@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("img/background.jpg") no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for content */
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+h1 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Common Button Styles */
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Yes Button */
+#yes-button {
+    background-color: #28a745;
+}
+
+#yes-button:hover {
+    background-color: #218838;
+}
+
+/* No Button */
+#no-button {
+    background-color: #dc3545;
+}
+
+#no-button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
