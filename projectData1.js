@@ -259,23 +259,23 @@ const projectData1 = [
       const playButton = document.createElement('a');
       playButton.href = item.playUrl;
       playButton.className = 'text-white px-4 py-2 m-1 bg-blue-600 rounded-lg hover:bg-blue-500 transition duration-200';
-      playButton.textContent = 'Play';
+      playButton.textContent = 'Play Project';
       hoverButtons.appendChild(playButton);
 
       // Source Code 1 button
       const sourceButton1 = document.createElement('a');
       sourceButton1.href = item.sourceCode1;
       sourceButton1.className = 'text-white px-4 py-2 m-1 bg-green-600 rounded-lg hover:bg-green-500 transition duration-200';
-      sourceButton1.textContent = 'Source Code 1';
-      sourceButton1.target = '_blank';
+      sourceButton1.textContent = 'Code 1';
+      sourceButton1.target = '';
       hoverButtons.appendChild(sourceButton1);
 
       // Source Code 2 button
       const sourceButton2 = document.createElement('a');
       sourceButton2.href = item.sourceCode2;
       sourceButton2.className = 'text-white px-4 py-2 m-1 bg-red-600 rounded-lg hover:bg-red-500 transition duration-200';
-      sourceButton2.textContent = 'Source Code 2';
-      sourceButton2.target = '_blank';
+      sourceButton2.textContent = 'Code 2';
+      sourceButton2.target = '';
       hoverButtons.appendChild(sourceButton2);
 
       card.appendChild(hoverButtons);
